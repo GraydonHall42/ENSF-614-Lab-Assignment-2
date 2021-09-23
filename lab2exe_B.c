@@ -14,7 +14,7 @@ int my_strlen(const char *s);
  *     terminating null.
  */
 
-void my_strncat(char *dest, const char *source, int);
+void my_strncat(char *dest, const char *source, int n);
 /*  Duplicates strncat from <string.h>, except return type is void.
  */
 

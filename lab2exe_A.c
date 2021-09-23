@@ -24,7 +24,6 @@ int main(void)
     double sum = 0;
     double x[4];
     double y[] = {2.3, 1.2, 2.0, 4.0};
-    
     printf(" sizeof(double) is %d bytes.\n", (int) sizeof(double));
     printf(" size of x in main is:  %d bytes.\n", (int) sizeof(x));
     printf(" y has %d elements and its size is:  %d bytes.\n",
@@ -32,10 +31,7 @@ int main(void)
     
     /* Point one */
     
-
-    
     try_to_copy(x, y);
-    
     
     try_to_change(x);
     
@@ -47,10 +43,9 @@ int main(void)
 
 
 void try_to_copy(double dest[], double source[])
-{   // const just means we can't edit whatever the pointer is pointing at
-
-    dest = source;  
-
+{
+    dest = source;
+    
     /* point two*/
     
     return;
@@ -59,7 +54,6 @@ void try_to_copy(double dest[], double source[])
 void try_to_change(double* dest)
 {
     dest [3] = 49.0;
-    printf("Dest in try_to_change %lf ", *dest);
     
     /* point three*/
     
