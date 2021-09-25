@@ -26,6 +26,8 @@ int main(void)
 {
   struct cplx w, z;			/* entered by user */
   struct cplx sum;			/* sum of w and z */
+  struct cplx diff;			/* difference of w and z */
+  struct cplx prod;			/* product of w and z */
 
   printf("This programs needs values for complex numbers w and z.\n");
 
@@ -43,8 +45,12 @@ int main(void)
   printf("z is (%f) + j(%f)\n", z.real, z.imag);
 
   sum = cplx_add(w, z);
+  cplx_subtract(w, z, &diff);
+  cplx_multiply(&w, &z, &prod);
 
   printf("\nsum is (%f) + j(%f)\n", sum.real, sum.imag);
+  printf("difference is (%f) + j(%f)\n", diff.real, diff.imag);
+  printf("product is (%f) + j(%f)\n", prod.real, prod.imag);
 
   return 0;
 }
