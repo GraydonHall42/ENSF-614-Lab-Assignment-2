@@ -1,1 +1,2 @@
-my_str
+
+    const char str2[] = "-tacit";

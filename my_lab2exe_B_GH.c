@@ -1,9 +1,9 @@
-/*
- *  lab2exe_B.c
- *
- *  ENSF 614 Lab 2 Exercise B
- *
- */
+/* File Name: my_lab2exe_B.c
+* Lab # and Assignment #: Lab #2 Exercise B
+* Lab section: 1
+* Completed by: Graydon Hall and Jared Kraus
+* Submission Date: 2021-09-27
+*/
 
 int my_strlen(const char *s);
 /*  Duplicates my_strlen from <string.h>, except return type is int.
