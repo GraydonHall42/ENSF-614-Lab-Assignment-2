@@ -24,8 +24,15 @@ double read_double_only(void);
 
 int main(void)
 {
-  struct cplx w, z;			/* entered by user */
-  struct cplx sum;			/* sum of w and z */
+  struct cplx w, z; /* entered by user */
+  struct cplx sum;  /* sum of w and z */
+  struct cplx difference, product;
+  struct cplx *diff, *prod, *w_ptr, *z_ptr;
+
+  w_ptr = &w;
+  z_ptr = &z;
+  diff = &difference;
+  prod = &product;
 
   printf("This programs needs values for complex numbers w and z.\n");
 
@@ -42,27 +49,35 @@ int main(void)
   printf("\nw is (%f) + j(%f)\n", w.real, w.imag);
   printf("z is (%f) + j(%f)\n", z.real, z.imag);
 
+  // sum
   sum = cplx_add(w, z);
-
   printf("\nsum is (%f) + j(%f)\n", sum.real, sum.imag);
+
+  // subtract
+  cplx_subtract(w, z, diff);
+  printf("\ndifference is (%f) + j(%f)\n", diff->real, diff->imag);
+
+  // subtract
+  cplx_multiply(w_ptr, z_ptr, prod);
+  printf("\nproduct is (%f) + j(%f)\n", prod->real, prod->imag);
 
   return 0;
 }
-
 
 double read_double_only(void)
 {
   double value_read;
   int char_code;
- 
-  if (scanf("%lf", &value_read) != 1) {
+
+  if (scanf("%lf", &value_read) != 1)
+  {
     printf("Error trying to read in a double.  Program terminated.\n");
     exit(1);
   }
- 
+
   char_code = getchar();
   while (char_code != '\n' && char_code != EOF)
     char_code = getchar();
- 
+
   return value_read;
 }

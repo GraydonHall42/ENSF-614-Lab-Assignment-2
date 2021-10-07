@@ -11,11 +11,13 @@ int what(const int *a, int n)
 {
   const int *max = a, *min = a + n - 1, *guard = a + n;
   const int *p, *q;
-  for (p = a + 1; p != guard; p++) {
+  for (p = a + 1; p != guard; p++)
+  {
     if (*p > *max)
       max = p;
   }
-  for (q = a + n - 1; q != a; q--) {
+  for (q = a + n - 1; q != a; q--)
+  {
     if (q[-1] < *min)
       min = q - 1;
   }
